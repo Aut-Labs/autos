@@ -1,0 +1,25 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+/nginx
+
+# testing
+/coverage
+
+# production
+/build
+/experimental
+/src/api
+/src/lib
+/.vscode
+
+# misc
+.DS_Store
+.env
+.env.backup
+
+.npmrc
+docker-compose.yml
+Dockerfile
+README.md
