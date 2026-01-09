@@ -17,7 +17,7 @@ import AutTheme from "./theme/theme";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ApolloProvider } from "@apollo/client";
 import { apolloClient } from "@store/graphql";
-import { wagmiConfig, WalletConnectorProvider } from "@aut-labs/connector";
+import { wagmiConfig, WalletConnectorProvider } from "@lib/connector";
 
 // markerSDK.loadWidget({
 //   destination: `${process.env.VITE_MARKER}`,

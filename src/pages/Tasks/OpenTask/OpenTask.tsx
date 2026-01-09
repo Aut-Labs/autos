@@ -21,7 +21,7 @@ import SubmitDialog from "@components/Dialog/SubmitDialog";
 import { OpenTaskContribution } from "@api/models/contribution-types/open-task.model";
 import { ContributionCommit } from "@utils/hooks/useQueryContributionCommits";
 import { useCommitAnyContributionMutation } from "@api/contributions.api";
-import { useWalletConnector } from "@aut-labs/connector";
+import { useWalletConnector } from "@lib/connector";
 import ErrorDialog from "@components/Dialog/ErrorPopup";
 import TaskDetails from "../Shared/TaskDetails";
 

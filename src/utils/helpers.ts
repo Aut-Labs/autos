@@ -80,6 +80,7 @@ export const toHex = (num) => {
 };
 
 export const extractDomain = (url) => {
+  if (!url) return "";
   const domainRegex = /https?:\/\/([^/]+)\//;
   const domainMatch = url.match(domainRegex);
   const domain = domainMatch ? domainMatch[1] : "";

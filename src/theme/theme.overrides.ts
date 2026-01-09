@@ -1,25 +1,22 @@
 import { PaletteColor } from "@mui/material";
+import React from "react";
 
 declare module "@mui/material/styles/createTypography" {
   interface Typography {
     // @ts-ignore
-    xl?: CSSProperties;
+    xl?: React.CSSProperties;
     // @ts-ignore
-    xxl?: CSSProperties;
-    subtitle1?: CSSProperties;
-    body?: CSSProperties;
-    subtitle2?: CSSProperties;
-    emphasis?: CSSProperties;
+    xxl?: React.CSSProperties;
+    body?: React.CSSProperties;
+    emphasis?: React.CSSProperties;
   }
 
   interface TypographyOptions {
-    xl?: CSSProperties;
+    xl?: React.CSSProperties;
     // @ts-ignore
-    xxl?: CSSProperties;
-    subtitle1?: CSSProperties;
-    body?: CSSProperties;
-    subtitle2?: CSSProperties;
-    emphasis?: CSSProperties;
+    xxl?: React.CSSProperties;
+    body?: React.CSSProperties;
+    emphasis?: React.CSSProperties;
   }
 }
 
@@ -132,8 +129,6 @@ declare module "@mui/material/Typography/Typography" {
     // @ts-ignore
     xxl?: true;
     body?: true;
-    subtitle1?: true;
-    subtitle2?: true;
     emphasis?: true;
   }
 }

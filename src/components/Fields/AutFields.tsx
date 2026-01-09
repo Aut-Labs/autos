@@ -7,7 +7,7 @@ import { Controller } from "react-hook-form";
 interface FormHelperTextProps {
   errors: any;
   name: string;
-  children?: string | JSX.Element;
+  children?: string | React.ReactElement;
   errorTypes?: any;
   value: any;
 }
@@ -130,16 +130,16 @@ export const SwDatePicker = ({
               sx: {
                 ".MuiCalendarPicker-root": {
                   'div[role="presentation"], .MuiButtonBase-root, .MuiTypography-root, .PrivatePickersYear-yearButton':
-                    {
-                      fontSize: pxToRem(18),
-                      color: "primary.main",
-                      "&.Mui-selected": {
-                        color: "text.primary"
-                      },
-                      "&[disabled]": {
-                        color: "text.disabled"
-                      }
+                  {
+                    fontSize: pxToRem(18),
+                    color: "primary.main",
+                    "&.Mui-selected": {
+                      color: "text.primary"
+                    },
+                    "&[disabled]": {
+                      color: "text.disabled"
                     }
+                  }
                 }
               }
             }}

@@ -8,7 +8,7 @@ import {
 import { useEffect, useState } from "react";
 import { environment } from "@api/environment";
 import axios from "axios";
-import { useWalletConnector } from "@aut-labs/connector";
+import { useWalletConnector } from "@lib/connector";
 
 export enum ContributionStatus {
   Pending = 1,

@@ -24,7 +24,7 @@ import {
 } from "@api/models/contribution-types/quiz.model.model";
 import { ContributionCommit } from "@utils/hooks/useQueryContributionCommits";
 import { useCommitAnyContributionMutation } from "@api/contributions.api";
-import { useWalletConnector } from "@aut-labs/connector";
+import { useWalletConnector } from "@lib/connector";
 
 export const taskStatuses: any = {
   [TaskStatus.Created]: {

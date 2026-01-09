@@ -5,7 +5,7 @@ import {
   QueryResult,
   useQuery
 } from "@apollo/client";
-import { AutIdJoinedHubState } from "@aut-labs/d-aut";
+import { AutIdJoinedHubState } from "@lib/d-aut";
 import { useEffect, useState } from "react";
 import { environment } from "@api/environment";
 import { AutOSAutID } from "@api/models/aut.model";

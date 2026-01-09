@@ -1,4 +1,4 @@
- 
+
 import {
   Box,
   Link,
@@ -59,7 +59,7 @@ const mockInteractions: AutIdInteractions[] = [
 ];
 
 const AutIDMap = () => {
-  const ref = useRef();
+  const ref = useRef(null);
   const dispatch = useAppDispatch();
   const addedInteractions = useSelector(AddedInteractions);
   const theme = useTheme();

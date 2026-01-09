@@ -35,8 +35,8 @@ const xCleanUp = (xIntervalRef) => {
 export const useOAuth = () => {
   const [authenticating, setAuthenticating] = useState(false);
   const [finsihedFlow, setFinishedFlow] = useState(false);
-  const popupRef = useRef<Window>();
-  const intervalRef = useRef<ReturnType<typeof setInterval>>();
+  const popupRef = useRef<Window>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval>>(null);
 
   const getAuth = useCallback(async (onSuccess, onFailure) => {
     setAuthenticating(true);
@@ -105,9 +105,9 @@ export const useOAuth = () => {
 export const useOAuthSocials = () => {
   const [authenticating, setAuthenticating] = useState(false);
   const [finsihedFlow, setFinishedFlow] = useState(false);
-  const popupRef = useRef<Window>();
-  const intervalRef = useRef<ReturnType<typeof setInterval>>();
-  const xIntervalRef = useRef<ReturnType<typeof setInterval>>();
+  const popupRef = useRef<Window>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval>>(null);
+  const xIntervalRef = useRef<ReturnType<typeof setInterval>>(null);
 
   const getAuthDiscord = useCallback(async (onSuccess, onFailure) => {
     setAuthenticating(true);

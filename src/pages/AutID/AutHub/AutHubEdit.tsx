@@ -760,54 +760,54 @@ const AutHubEdit = () => {
                           )}
                           {periodData?.pointsGiven ===
                             periodData?.expectedPoints && (
-                            <Box
-                              sx={{
-                                width: "100%",
-                                ml: theme.spacing(3),
-
-                                display: "flex",
-                                justifyContent: "flex-start",
-                                alignItems: "center",
-                                flexDirection: "row"
-                              }}
-                            >
                               <Box
                                 sx={{
-                                  borderRadius: "100px",
-                                  backgroundColor: "#14ECEC",
-                                  height: "30px",
-                                  width: "30px",
-                                  display: "flex",
-                                  justifyContent: "center",
-                                  alignItems: "center",
-                                  mr: theme.spacing(1),
+                                  width: "100%",
+                                  ml: theme.spacing(3),
 
-                                  boxShadow:
-                                    "0px 16px 80px 0px #2E90FA, 0px 16px 64px 0px rgba(20, 200, 236, 0.64), 0px 8px 32px 0px rgba(20, 200, 236, 0.32), 0px 16px 80px 0px #2E90FA, 0px 16px 64px 0px rgba(20, 200, 236, 0.64), 0px 8px 32px 0px rgba(20, 200, 236, 0.32)"
+                                  display: "flex",
+                                  justifyContent: "flex-start",
+                                  alignItems: "center",
+                                  flexDirection: "row"
                                 }}
                               >
-                                <SvgIcon
-                                  viewBox="0 0 16 16"
-                                  height={16}
-                                  width={16}
+                                <Box
                                   sx={{
-                                    fill: "transparent"
+                                    borderRadius: "100px",
+                                    backgroundColor: "#14ECEC",
+                                    height: "30px",
+                                    width: "30px",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    mr: theme.spacing(1),
+
+                                    boxShadow:
+                                      "0px 16px 80px 0px #2E90FA, 0px 16px 64px 0px rgba(20, 200, 236, 0.64), 0px 8px 32px 0px rgba(20, 200, 236, 0.32), 0px 16px 80px 0px #2E90FA, 0px 16px 64px 0px rgba(20, 200, 236, 0.64), 0px 8px 32px 0px rgba(20, 200, 236, 0.32)"
                                   }}
-                                  component={Check}
-                                />
+                                >
+                                  <SvgIcon
+                                    viewBox="0 0 16 16"
+                                    height={16}
+                                    width={16}
+                                    sx={{
+                                      fill: "transparent"
+                                    }}
+                                    component={Check}
+                                  />
+                                </Box>
+                                <Typography
+                                  variant="subtitle2"
+                                  color="offWhite.main"
+                                  sx={{
+                                    zIndex: 5
+                                  }}
+                                >
+                                  You’ve secured your current Contribution! Now
+                                  boost it up 💪
+                                </Typography>
                               </Box>
-                              <Typography
-                                variant="subtitle2"
-                                color="offWhite.main"
-                                sx={{
-                                  zIndex: 5
-                                }}
-                              >
-                                You’ve secured your current Contribution! Now
-                                boost it up 💪
-                              </Typography>
-                            </Box>
-                          )}
+                            )}
                           {periodData?.pointsGiven > periodData?.expectedPoints && (
                             <Box
                               sx={{

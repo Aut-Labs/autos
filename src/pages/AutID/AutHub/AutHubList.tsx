@@ -63,7 +63,7 @@ const { IconContainer } = EditContentElements;
 
 const HubListItem = memo(({ row }: { row: AutOSHub }) => {
   const { data: periodData } = useQueryHubPeriod(row?.properties?.address);
-  console.log("periodData", periodData); 
+  console.log("periodData", periodData);
   const theme = useTheme();
   const { address } = useAccount();
   const autID = useSelector(SelectedAutID);
@@ -305,13 +305,13 @@ const HubListItem = memo(({ row }: { row: AutOSHub }) => {
             {periodData?.score || 100}
           </Typography>
           <SubtitleWithInfo
-           title="participation score"
-           description=""
-            // description={
-            //   isAddressTheConnectedUser
-            //     ? "This is your participation score"
-            //     : `This is ${autID?.name}'s participation score`
-            // }
+            title="participation score"
+            description=""
+          // description={
+          //   isAddressTheConnectedUser
+          //     ? "This is your participation score"
+          //     : `This is ${autID?.name}'s participation score`
+          // }
           ></SubtitleWithInfo>
         </PropertiesWrapper>
         <PropertiesWrapper sx={{}}>
@@ -325,11 +325,11 @@ const HubListItem = memo(({ row }: { row: AutOSHub }) => {
           <SubtitleWithInfo
             title="contribution points"
             description=""
-            // description={
-            //   isAddressTheConnectedUser
-            //     ? "These are your contribution points"
-            //     : `These are ${autID?.name}'s contribution points`
-            // }
+          // description={
+          //   isAddressTheConnectedUser
+          //     ? "These are your contribution points"
+          //     : `These are ${autID?.name}'s contribution points`
+          // }
           ></SubtitleWithInfo>
         </PropertiesWrapper>
       </HubBottomWrapper>

@@ -7,7 +7,7 @@ import TaskDetails from "../Shared/TaskDetails";
 import SubmitDialog from "@components/Dialog/SubmitDialog";
 import AutLoading from "@components/AutLoading";
 import { useOAuthSocials } from "@components/OAuth";
-import { useWalletConnector } from "@aut-labs/connector";
+import { useWalletConnector } from "@lib/connector";
 import { ContributionCommit } from "@utils/hooks/useQueryContributionCommits";
 import { GithubCommitContribution } from "@api/models/contribution-types/github-commit.model";
 import { useCommitAnyContributionMutation } from "@api/contributions.api";

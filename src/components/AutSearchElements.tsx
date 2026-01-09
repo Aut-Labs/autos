@@ -1,5 +1,5 @@
 import { AutTextField } from "@theme/field-text-styles";
-import { ChangeEvent, useState, VFC } from "react";
+import { ChangeEvent, useState, FC } from "react";
 import omit from "lodash-es/omit";
 import {
   AutocompleteRenderInputParams,
@@ -136,28 +136,28 @@ export const FormWrapper = styled("div", {
 })<StyledCompactProps & { autoComplete: string }>(({ compact, theme }) => ({
   ...(!compact
     ? {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        width: "100%",
-        marginTop: "30px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      width: "100%",
+      marginTop: "30px",
 
-        [theme.breakpoints.down("md")]: {
-          marginTop: "20px",
-          width: "100%",
-          paddingLeft: "0",
-          paddingRight: "0",
-          alignItems: "center",
-          justifyContent: "center",
-          alignContent: "center"
-        }
+      [theme.breakpoints.down("md")]: {
+        marginTop: "20px",
+        width: "100%",
+        paddingLeft: "0",
+        paddingRight: "0",
+        alignItems: "center",
+        justifyContent: "center",
+        alignContent: "center"
       }
+    }
     : {
-        display: "flex",
-        [theme.breakpoints.down("sm")]: {
-          display: "none"
-        }
-      })
+      display: "flex",
+      [theme.breakpoints.down("sm")]: {
+        display: "none"
+      }
+    })
 }));
 
 export function CustomPaper({ children }) {
@@ -261,7 +261,7 @@ export const RenderAutIDOption = ({
   );
 };
 
-export const SearchTextField: VFC<
+export const SearchTextField: FC<
   TextFieldProps & {
     params: AutocompleteRenderInputParams;
   }

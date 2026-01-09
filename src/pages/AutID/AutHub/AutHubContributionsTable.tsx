@@ -22,7 +22,7 @@ import { format } from "date-fns";
 import { AutOsButton } from "@components/AutButton";
 import useQueryContributions from "@utils/hooks/GetContributions";
 import { useCommitAnyContributionMutation } from "@api/contributions.api";
-import { useWalletConnector } from "@aut-labs/connector";
+import { useWalletConnector } from "@lib/connector";
 import useQueryContributionCommits, {
   ContributionCommit,
   ContributionStatus,

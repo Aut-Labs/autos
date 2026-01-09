@@ -6,7 +6,7 @@ import useQueryContributions from "@utils/hooks/GetContributions";
 import { OpenTaskContribution } from "@api/models/contribution-types/open-task.model";
 import { QuizTaskContribution } from "@api/models/contribution-types/quiz.model.model";
 import useQueryContributionCommits from "@utils/hooks/useQueryContributionCommits";
-import { useWalletConnector } from "@aut-labs/connector";
+import { useWalletConnector } from "@lib/connector";
 import { GithubCommitContribution } from "@api/models/contribution-types/github-commit.model";
 import GithubCommitTask from "../GithubTask/GithubCommitTask";
 import GithubPRTask from "../GithubTask/GithubPRTask";

@@ -18,7 +18,7 @@ import { setOpenCommitment } from "@store/ui-reducer";
 
 export interface CommitmentDialogProps {
   title: string;
-  description?: JSX.Element;
+  description?: React.ReactElement;
   open?: boolean;
   commitment: string;
   minCommitment: number;

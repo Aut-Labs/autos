@@ -6,7 +6,7 @@ import {
   QueryResult,
   useQuery
 } from "@apollo/client";
-import { AutIdJoinedHubState } from "@aut-labs/d-aut";
+import { AutIdJoinedHubState } from "@lib/d-aut";
 import { useEffect, useMemo, useState } from "react";
 import useGetAutIdFilter from "@utils/hooks/useAutIdFilter";
 import { useAppDispatch } from "@store/store.model";
@@ -95,7 +95,7 @@ const buildClasses = async (
       } else if (
         curr instanceof AutOSAutID &&
         curr.properties.address?.toLowerCase() !==
-          selectedAutID.properties.address?.toLowerCase()
+        selectedAutID.properties.address?.toLowerCase()
       ) {
         acc.autIDs.push(curr);
       }

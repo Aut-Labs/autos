@@ -1,27 +1,25 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
+/nginx
 
 # testing
 /coverage
 
 # production
 /build
+/experimental
+/src/api
+/src/lib
+/.vscode
 
 # misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 .env
-.env_prod
+.env.backup
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.env.local
 .npmrc
+docker-compose.yml
+Dockerfile
+README.md

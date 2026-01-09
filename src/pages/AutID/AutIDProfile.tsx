@@ -40,7 +40,7 @@ import AutBadge2DDialog from "./AutIDBadge/2DBadge";
 import { socialsWithIcons } from "@utils/social-icons";
 import AutHubList from "./AutHub/AutHubList";
 import OpenTask from "../Tasks/OpenTask/OpenTask";
-import DiscordTask from "../Tasks/DiscordTask/DiscordTask";
+import DiscordTask from "../Tasks/DiscordTask/JoinDiscordTask";
 import { SocialUrls } from "@aut-labs/sdk";
 
 const { FormWrapper, FollowWrapper, IconContainer } = EditContentElements;
@@ -70,7 +70,7 @@ const AutIDProfile = () => {
     return selectedNetwork?.explorerUrls?.[0];
   }, [selectedNetwork]);
 
-  const onSubmit = (data: any) => {};
+  const onSubmit = (data: any) => { };
 
   const { handleSubmit } = useForm({
     mode: "onChange",

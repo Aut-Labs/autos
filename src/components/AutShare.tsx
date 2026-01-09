@@ -22,7 +22,7 @@ import ClipboardCopy from "@utils/clipboard-copy";
 export interface SimpleDialogProps {
   title: string;
   url: string;
-  description?: JSX.Element;
+  description?: React.ReactElement;
   open?: boolean;
   onClose?: () => void;
   twitterProps?: any;

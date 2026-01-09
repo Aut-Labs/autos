@@ -1,6 +1,6 @@
-import { memo, useEffect, useLayoutEffect, useRef } from "react";
+import { memo, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useAppDispatch } from "@store/store.model";
-import { Init } from "@aut-labs/d-aut";
+import { Init } from "@lib/d-aut";
 import { useSelector } from "react-redux";
 import {
   NetworksConfig,
@@ -11,7 +11,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { EnvMode, environment } from "@api/environment";
 import AutSDK, { MultiSigner } from "@aut-labs/sdk";
 import { NetworkConfig } from "@api/models/network.config";
-import { useAutConnector } from "@aut-labs/connector";
+import { useAutConnector } from "@lib/connector";
 import axios from "axios";
 import { extractDomain } from "@utils/helpers";
 import { AutOSAutID } from "@api/models/aut.model";
@@ -139,17 +139,21 @@ function DAutConnect({
   };
 
   useEffect(() => {
-    if (multiSignerId) {
+    if (multiSignerId && Array.isArray(networks) && networks.length > 0) {
       let network = networks.find((d) => d.chainId === chainId);
       if (!network) {
         network = networks.filter((d) => !d.disabled)[0];
       }
-      initialiseSDK(network, multiSigner);
+      if (network) {
+        initialiseSDK(network, multiSigner);
+      }
     }
-  }, [multiSignerId]);
+  }, [multiSignerId, networks, chainId, multiSigner]);
 
   async function connectInterceptor(c) {
     const newState = await connect(c);
+
+    if (!newState) return;
 
     if (environment.interactionsApiUrl == "NOT_SET") {
       return newState;
@@ -232,6 +236,19 @@ function DAutConnect({
     };
   }, [dAutInitialized, multiSignerId]);
 
+  const [flowMode, setFlowMode] = useState<string>('signup'); // Default to signup
+
+  useEffect(() => {
+    const checkAutIDExistence = async () => {
+      if (address) {
+        const { hasAutID } = await import('@utils/autid-checker');
+        const hasID = await hasAutID(address);
+        setFlowMode(hasID ? 'signin' : 'signup');
+      }
+    };
+    checkAutIDExistence();
+  }, [address]);
+
   return (
     <>
       <d-aut
@@ -243,9 +260,7 @@ function DAutConnect({
         use-dev={environment.env == EnvMode.Development}
         id="d-aut"
         menu-items='[{"name":"Profile","actionType":"event_emit","eventName":"aut_profile"}]'
-        flow-config='{"mode" : "signin", "customCongratsMessage": ""}'
-        // flow-config='{"mode" : "signup", "customCongratsMessage": ""}'
-        // hub-address="0xf6d380e137a7953c3ce1380de12246088db67dc0"
+        flow-config={`{"mode" : "${flowMode}", "customCongratsMessage": ""}`}
         ipfs-gateway={environment.ipfsGatewayUrl}
       />
     </>
@@ -253,7 +268,7 @@ function DAutConnect({
 }
 
 export const DautPlaceholder = memo(() => {
-  const ref = useRef<HTMLDivElement>();
+  const ref = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
     let dautEl: HTMLElement = document.querySelector("#d-aut");
     dautEl.style.display = "none";

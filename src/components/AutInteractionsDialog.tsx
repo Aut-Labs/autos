@@ -17,13 +17,13 @@ import { editCommitment } from "@api/data.api";
 import { setOpenCommitment } from "@store/ui-reducer";
 import AutTabs from "./AutTabs";
 import AutInteractionTabs from "@components/AutInteractionTabs/AutInteractionTabs";
-import { useAutConnector, useWalletConnector } from "@aut-labs/connector";
+import { useAutConnector, useWalletConnector } from "@lib/connector";
 import axios from "axios";
 import { environment } from "@api/environment";
 
 export interface InteractionsDialogProps {
   title: string;
-  description?: JSX.Element;
+  description?: React.ReactElement;
   open?: boolean;
   onClose?: () => void;
 }

@@ -4,7 +4,7 @@ import AutSDK, { Hub } from "@aut-labs/sdk";
 import { SelectedAutID, SelectedHubAddress } from "@store/aut/aut.reducer";
 import { useParams } from "react-router-dom";
 import { useMemo } from "react";
-import { useWalletConnector } from "@aut-labs/connector";
+import { useWalletConnector } from "@lib/connector";
 import { AutOSAutID } from "@api/models/aut.model";
 
 export interface HubPeriodData {

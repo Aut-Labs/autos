@@ -44,7 +44,7 @@ function InteractionMap({
   isActive: boolean;
   mapData: MapData;
 }) {
-  const fgRef = useRef<ForceGraphMethods>();
+  const fgRef = useRef<ForceGraphMethods>(null);
   const [anchorPos, setAnchorPos] = useState({ x: 0, y: 0 });
   const [centralNode, setCentralNode] = useState<NodeObject<MapNode>>(null);
   const [hoveredNode, setHoveredNode] = useState(null);
@@ -355,7 +355,7 @@ function InteractionMap({
         linkHoverPrecision={8}
         d3VelocityDecay={1}
         cooldownTicks={0}
-        // enableZoomInteraction={false}
+      // enableZoomInteraction={false}
       />
       <AutInteractionsDialog
         open={isInteractionDialogOpen}

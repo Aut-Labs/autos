@@ -5,7 +5,7 @@ import Dialog from "@mui/material/Dialog";
 import { styled } from "@mui/material/styles";
 
 function AutBadge3D({ url }) {
-  const meshRef = useRef<any>();
+  const meshRef = useRef<any>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [rotation, setRotation] = useState({ x: 0, y: 0 });

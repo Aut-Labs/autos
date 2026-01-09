@@ -31,7 +31,7 @@ import { AutOSAutID } from "@api/models/aut.model";
 
 export interface EditDialogProps {
   title: string;
-  description?: JSX.Element;
+  description?: React.ReactElement;
   open?: boolean;
   onClose?: () => void;
   hideCloseBtn?: boolean;
@@ -299,7 +299,7 @@ function AutEditProfileDialog(props: EditDialogProps) {
                             onChange(null);
                           }
                         }}
-                        // errors={errors}
+                      // errors={errors}
                       />
                     </div>
                   );
